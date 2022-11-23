@@ -202,7 +202,7 @@
   "sourceMap": "72:1493:0:-;;;101:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;399:129;8:9:-1;5:2;;;30:1;27;20:12;5:2;399:129:0;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;399:129:0;;;;;;;;;;;;;;;;;;;;;;;;;462:4;456:3;;:10;;;;;;;;;;;;;;;;;;486:9;475:8;;:20;;;;;;;;;;;;;;;;;;512:10;504:5;;:18;;;;;;;;;;;;;;;;;;399:129;;72:1493;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "72:1493:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;72:1493:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;101:37;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;101:37:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;200:14;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;170:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;253:46;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;253:46:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1218:345;;;:::i;:::-;;352:41;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;352:41:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;144:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;927:286;;;:::i;:::-;;305:41;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;305:41:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;533:389;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;533:389:0;;;;;;;;;;;;;;;;;:::i;:::-;;222:24;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;222:24:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;101:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;200:14::-;;;;;;;;;;;;;:::o;170:24::-;;;;;;;;;;;;;:::o;253:46::-;;;;;;;;;;;;;;;;;:::o;1218:345::-;1279:5;;;;;;;;;;;1265:19;;:10;:19;;;1257:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1324:6;1331:1;1324:8;;1319:239;1335:7;:14;;;;1333:1;:16;1319:239;;;1369:17;1389:7;1397:1;1389:10;;;;;;;;;;;;;;;;;;;;;;;;;1369:30;;1413:12;1456:1;1428:14;:25;1443:9;1428:25;;;;;;;;;;;;;;;;:29;;;;;;1413:44;;1484:1;1474:7;:11;1471:77;;;1501:3;;;;;;;;;;;:12;;;1514:9;1525:7;1501:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1501:32:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1501:32:0;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1501:32:0;;;;;;;;;;;;;;;;;1471:77;1319:239;;1350:3;;;;;;;1319:239;;;;1218:345::o;352:41::-;;;;;;;;;;;;;;;;;;;;;;:::o;144:20::-;;;;;;;;;;;;;:::o;927:286::-;968:12;983:14;:26;998:10;983:26;;;;;;;;;;;;;;;;968:41;;1034:1;1026:7;:9;1018:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1090:8;;;;;;;;;;;:17;;;1108:10;1120:7;1090:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1090:38:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1090:38:0;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1090:38:0;;;;;;;;;;;;;;;;;1166:1;1138:14;:26;1153:10;1138:26;;;;;;;;;;;;;;;:29;;;;1201:5;1177:9;:21;1187:10;1177:21;;;;;;;;;;;;;;;;:29;;;;;;;;;;;;;;;;;;927:286;:::o;305:41::-;;;;;;;;;;;;;;;;;;;;;;:::o;533:389::-;602:1;594:7;:9;586:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;634:8;;;;;;;;;;;:21;;;656:10;676:4;683:7;634:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;634:57:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;634:57:0;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;634:57:0;;;;;;;;;;;;;;;;;759:7;730:14;:26;745:10;730:26;;;;;;;;;;;;;;;;:36;701:14;:26;716:10;701:26;;;;;;;;;;;;;;;:65;;;;779:9;:21;789:10;779:21;;;;;;;;;;;;;;;;;;;;;;;;;775:74;;815:7;828:10;815:24;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;815:24:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;775:74;878:4;854:9;:21;864:10;854:21;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;911:4;888:9;:21;898:10;888:21;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;533:389;:::o;222:24::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "pragma solidity ^0.5.0;\n\nimport './RWD.sol';\nimport './TestCoin.sol';\n\n\ncontract DecentralBank {\n    string public name = 'Decentral Bank';\n    address public owner;\n    TestCoin public testCoin;\n    RWD public rwd; \n\n    address[] public stakers;\n\n    mapping(address => uint) public stakingBalance;\n    mapping(address => bool) public hasStaked;\n    mapping(address => bool) public isStaking;\n\n   constructor(RWD _rwd,TestCoin _testCoin) public {\n       rwd = _rwd;\n       testCoin = _testCoin;\n       owner = msg.sender;\n   }\n\n   function depositTokens(uint _amount) public {\n       require(_amount>0,'amount cannot be 0');\n       testCoin.transferFrom(msg.sender, address(this), _amount);\n\n       stakingBalance[msg.sender] = stakingBalance[msg.sender] + _amount;\n       if(!hasStaked[msg.sender]) {\n           stakers.push(msg.sender);\n       }\n    isStaking[msg.sender] = true;\n    hasStaked[msg.sender] =true;\n\n   }\n\n   function unstakeTokens() public {\n       uint balance = stakingBalance[msg.sender];\n       require(balance>0,'stakinbg balance cannot be less than zero');\n\n       testCoin.transfer(msg.sender, balance);\n\n       stakingBalance[msg.sender] =0;\n\n       isStaking[msg.sender] = false;\n\n   }\n\n   function issueTokens() public {\n       require(msg.sender == owner,'caller must be owner');\n\n        for (uint i=0;i<stakers.length;i++) {\n            address recipient = stakers[i];\n            uint balance = stakingBalance[recipient] / 9;\n            if(balance > 0) {\n            rwd.transfer(recipient, balance);\n            }\n        }\n   }\n}",
-  "sourcePath": "/Users/shubamagrawal/Documents/defi-staking-app-starter/defi-staking-app-starter/src/contracts/DecentralBank.sol",
+  "sourcePath": "/Users/shubamagrawal/Documents/defi-staking-app-starter/Dapp/src/contracts/DecentralBank.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/DecentralBank.sol",
     "exportedSymbols": {
@@ -230,7 +230,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 205,
-        "sourceUnit": 384,
+        "sourceUnit": 441,
         "src": "25:19:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -241,7 +241,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 205,
-        "sourceUnit": 563,
+        "sourceUnit": 620,
         "src": "45:24:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -339,7 +339,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_TestCoin_$562",
+              "typeIdentifier": "t_contract$_TestCoin_$619",
               "typeString": "contract TestCoin"
             },
             "typeName": {
@@ -347,10 +347,10 @@
               "id": 9,
               "name": "TestCoin",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 562,
+              "referencedDeclaration": 619,
               "src": "170:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_TestCoin_$562",
+                "typeIdentifier": "t_contract$_TestCoin_$619",
                 "typeString": "contract TestCoin"
               }
             },
@@ -367,7 +367,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_RWD_$383",
+              "typeIdentifier": "t_contract$_RWD_$440",
               "typeString": "contract RWD"
             },
             "typeName": {
@@ -375,10 +375,10 @@
               "id": 11,
               "name": "RWD",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 383,
+              "referencedDeclaration": 440,
               "src": "200:3:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RWD_$383",
+                "typeIdentifier": "t_contract$_RWD_$440",
                 "typeString": "contract RWD"
               }
             },
@@ -580,7 +580,7 @@
                       "referencedDeclaration": 12,
                       "src": "456:3:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RWD_$383",
+                        "typeIdentifier": "t_contract$_RWD_$440",
                         "typeString": "contract RWD"
                       }
                     },
@@ -595,13 +595,13 @@
                       "referencedDeclaration": 29,
                       "src": "462:4:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RWD_$383",
+                        "typeIdentifier": "t_contract$_RWD_$440",
                         "typeString": "contract RWD"
                       }
                     },
                     "src": "456:10:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_RWD_$383",
+                      "typeIdentifier": "t_contract$_RWD_$440",
                       "typeString": "contract RWD"
                     }
                   },
@@ -626,7 +626,7 @@
                       "referencedDeclaration": 10,
                       "src": "475:8:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_TestCoin_$562",
+                        "typeIdentifier": "t_contract$_TestCoin_$619",
                         "typeString": "contract TestCoin"
                       }
                     },
@@ -641,13 +641,13 @@
                       "referencedDeclaration": 31,
                       "src": "486:9:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_TestCoin_$562",
+                        "typeIdentifier": "t_contract$_TestCoin_$619",
                         "typeString": "contract TestCoin"
                       }
                     },
                     "src": "475:20:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_TestCoin_$562",
+                      "typeIdentifier": "t_contract$_TestCoin_$619",
                       "typeString": "contract TestCoin"
                     }
                   },
@@ -686,7 +686,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 577,
+                        "referencedDeclaration": 634,
                         "src": "512:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -740,7 +740,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_RWD_$383",
+                    "typeIdentifier": "t_contract$_RWD_$440",
                     "typeString": "contract RWD"
                   },
                   "typeName": {
@@ -748,10 +748,10 @@
                     "id": 28,
                     "name": "RWD",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 383,
+                    "referencedDeclaration": 440,
                     "src": "411:3:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_RWD_$383",
+                      "typeIdentifier": "t_contract$_RWD_$440",
                       "typeString": "contract RWD"
                     }
                   },
@@ -768,7 +768,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_TestCoin_$562",
+                    "typeIdentifier": "t_contract$_TestCoin_$619",
                     "typeString": "contract TestCoin"
                   },
                   "typeName": {
@@ -776,10 +776,10 @@
                     "id": 30,
                     "name": "TestCoin",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 562,
+                    "referencedDeclaration": 619,
                     "src": "420:8:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_TestCoin_$562",
+                      "typeIdentifier": "t_contract$_TestCoin_$619",
                       "typeString": "contract TestCoin"
                     }
                   },
@@ -895,10 +895,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        580,
-                        581
+                        637,
+                        638
                       ],
-                      "referencedDeclaration": 581,
+                      "referencedDeclaration": 638,
                       "src": "586:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -935,7 +935,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 577,
+                          "referencedDeclaration": 634,
                           "src": "656:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -965,7 +965,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 595,
+                            "referencedDeclaration": 652,
                             "src": "676:4:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_DecentralBank_$204",
@@ -1045,7 +1045,7 @@
                         "referencedDeclaration": 10,
                         "src": "634:8:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_TestCoin_$562",
+                          "typeIdentifier": "t_contract$_TestCoin_$619",
                           "typeString": "contract TestCoin"
                         }
                       },
@@ -1056,7 +1056,7 @@
                       "lValueRequested": false,
                       "memberName": "transferFrom",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 561,
+                      "referencedDeclaration": 618,
                       "src": "634:21:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -1113,7 +1113,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 577,
+                          "referencedDeclaration": 634,
                           "src": "716:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1182,7 +1182,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 577,
+                            "referencedDeclaration": 634,
                             "src": "745:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1281,7 +1281,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 577,
+                          "referencedDeclaration": 634,
                           "src": "789:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1339,7 +1339,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 577,
+                                "referencedDeclaration": 634,
                                 "src": "828:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -1448,7 +1448,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 577,
+                          "referencedDeclaration": 634,
                           "src": "864:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1542,7 +1542,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 577,
+                          "referencedDeclaration": 634,
                           "src": "898:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1721,7 +1721,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 577,
+                        "referencedDeclaration": 634,
                         "src": "998:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1844,10 +1844,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        580,
-                        581
+                        637,
+                        638
                       ],
-                      "referencedDeclaration": 581,
+                      "referencedDeclaration": 638,
                       "src": "1018:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1884,7 +1884,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 577,
+                          "referencedDeclaration": 634,
                           "src": "1108:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1939,7 +1939,7 @@
                         "referencedDeclaration": 10,
                         "src": "1090:8:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_TestCoin_$562",
+                          "typeIdentifier": "t_contract$_TestCoin_$619",
                           "typeString": "contract TestCoin"
                         }
                       },
@@ -1950,7 +1950,7 @@
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 475,
+                      "referencedDeclaration": 532,
                       "src": "1090:17:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -2007,7 +2007,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 577,
+                          "referencedDeclaration": 634,
                           "src": "1153:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2101,7 +2101,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 577,
+                          "referencedDeclaration": 634,
                           "src": "1187:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2219,7 +2219,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 577,
+                            "referencedDeclaration": 634,
                             "src": "1265:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -2295,10 +2295,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        580,
-                        581
+                        637,
+                        638
                       ],
-                      "referencedDeclaration": 581,
+                      "referencedDeclaration": 638,
                       "src": "1257:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2630,7 +2630,7 @@
                                     "referencedDeclaration": 12,
                                     "src": "1501:3:0",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_contract$_RWD_$383",
+                                      "typeIdentifier": "t_contract$_RWD_$440",
                                       "typeString": "contract RWD"
                                     }
                                   },
@@ -2641,7 +2641,7 @@
                                   "lValueRequested": false,
                                   "memberName": "transfer",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 296,
+                                  "referencedDeclaration": 353,
                                   "src": "1501:12:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -2883,7 +2883,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 384,
+          "SourceUnit": 441,
           "absolutePath": "project:/src/contracts/RWD.sol",
           "file": "./RWD.sol",
           "scope": 205,
@@ -2898,7 +2898,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 563,
+          "SourceUnit": 620,
           "absolutePath": "project:/src/contracts/TestCoin.sol",
           "file": "./TestCoin.sol",
           "scope": 205,
@@ -3014,7 +3014,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "TestCoin",
-                  "referencedDeclaration": 562,
+                  "referencedDeclaration": 619,
                   "type": "contract TestCoin"
                 },
                 "id": 9,
@@ -3042,7 +3042,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "RWD",
-                  "referencedDeclaration": 383,
+                  "referencedDeclaration": 440,
                   "type": "contract RWD"
                 },
                 "id": 11,
@@ -3261,7 +3261,7 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "RWD",
-                          "referencedDeclaration": 383,
+                          "referencedDeclaration": 440,
                           "type": "contract RWD"
                         },
                         "id": 28,
@@ -3289,7 +3289,7 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "TestCoin",
-                          "referencedDeclaration": 562,
+                          "referencedDeclaration": 619,
                           "type": "contract TestCoin"
                         },
                         "id": 30,
@@ -3466,7 +3466,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 577,
+                                  "referencedDeclaration": 634,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -3591,10 +3591,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                580,
-                                581
+                                637,
+                                638
                               ],
-                              "referencedDeclaration": 581,
+                              "referencedDeclaration": 638,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -3718,7 +3718,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "transferFrom",
-                              "referencedDeclaration": 561,
+                              "referencedDeclaration": 618,
                               "type": "function (address,address,uint256) external returns (bool)"
                             },
                             "children": [
@@ -3759,7 +3759,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 577,
+                                  "referencedDeclaration": 634,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -3812,7 +3812,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 595,
+                                  "referencedDeclaration": 652,
                                   "type": "contract DecentralBank",
                                   "value": "this"
                                 },
@@ -3904,7 +3904,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 577,
+                                      "referencedDeclaration": 634,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -3979,7 +3979,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 577,
+                                          "referencedDeclaration": 634,
                                           "type": "msg",
                                           "value": "msg"
                                         },
@@ -4085,7 +4085,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 577,
+                                      "referencedDeclaration": 634,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -4181,7 +4181,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 577,
+                                          "referencedDeclaration": 634,
                                           "type": "msg",
                                           "value": "msg"
                                         },
@@ -4269,7 +4269,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 577,
+                                      "referencedDeclaration": 634,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -4369,7 +4369,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 577,
+                                      "referencedDeclaration": 634,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -4539,7 +4539,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 577,
+                                  "referencedDeclaration": 634,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -4592,10 +4592,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                580,
-                                581
+                                637,
+                                638
                               ],
-                              "referencedDeclaration": 581,
+                              "referencedDeclaration": 638,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -4715,7 +4715,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "transfer",
-                              "referencedDeclaration": 475,
+                              "referencedDeclaration": 532,
                               "type": "function (address,uint256) external returns (bool)"
                             },
                             "children": [
@@ -4756,7 +4756,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 577,
+                                  "referencedDeclaration": 634,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -4848,7 +4848,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 577,
+                                      "referencedDeclaration": 634,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -4948,7 +4948,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 577,
+                                      "referencedDeclaration": 634,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -5073,10 +5073,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                580,
-                                581
+                                637,
+                                638
                               ],
-                              "referencedDeclaration": 581,
+                              "referencedDeclaration": 638,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -5117,7 +5117,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 577,
+                                      "referencedDeclaration": 634,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -5630,7 +5630,7 @@
                                               "isPure": false,
                                               "lValueRequested": false,
                                               "member_name": "transfer",
-                                              "referencedDeclaration": 296,
+                                              "referencedDeclaration": 353,
                                               "type": "function (address,uint256) external returns (bool)"
                                             },
                                             "children": [
@@ -5739,12 +5739,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xE885017d55c140Ea717d2aD555B1726019FCe0ec",
-      "transactionHash": "0x7d26a875b43a9d25dcc295631f07b632809da98b2932a86e70cf4edd173d6f87"
+      "address": "0x2e84a054C3D5E08D108ecA46C978CC58236eAE16",
+      "transactionHash": "0xe9df9671043945e9a3753c653398752db6944fade435b7d455efc1b4ed7242f4"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-20T13:10:21.074Z",
+  "updatedAt": "2022-11-23T07:12:07.149Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
