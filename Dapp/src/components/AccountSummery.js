@@ -1,6 +1,6 @@
 import React from 'react'
 import Paper from '@mui/material/Paper';
-import { Typography, Grid, Button } from '@mui/material';
+import { Typography, Grid, Tooltip } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 const Main = ({ data }) => {
     if (data.loading) {
@@ -16,21 +16,23 @@ const Main = ({ data }) => {
                         <Typography variant='h5' sx={{
                             fontFamily: 'monospace',
                             fontWeight: 700,
-                        }}>{data.testCoinBalance}</Typography>
+                        }}>{data.testCoinBalance} TSTC</Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Typography variant='subtitle1'>Staking Tokens</Typography>
                         <Typography variant='h5' sx={{
                             fontFamily: 'monospace',
                             fontWeight: 700,
-                        }}>{data.stakingBalance}</Typography>
+                        }}>{data.stakingBalance} TSTC</Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Typography variant='subtitle1'>Reward Tokens</Typography>
-                        <Typography variant='h5' sx={{
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                        }}>{data.rwdBalance}</Typography>
+                        <Tooltip title={`${data.rwdBalance} RWD`}>
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'monospace',
+                                fontWeight: 700,
+                            }}>{parseFloat(data.rwdBalance).toFixed(2)} RWD</Typography>
+                        </Tooltip>
                     </Grid>
                 </Grid>
             </Paper>

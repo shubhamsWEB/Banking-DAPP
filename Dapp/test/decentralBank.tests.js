@@ -47,6 +47,11 @@ contract('DecentralBank', ([owner,customer]) => {
             let balance = await rwd.balanceOf(decentralBank.address);
             assert.equal(balance,tokens('1000000'))
         })
+        it('Issue free tokens',async () => {
+            await testCoin.issueFreeTokens(tokens('100'));
+            let balance = await testCoin.balanceOf(customer);
+            assert.equal(balance,tokens('100'))
+        })
     })
 
     describe('Yield Farming', async () => {

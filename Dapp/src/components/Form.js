@@ -4,21 +4,23 @@ import SavingsIcon from '@mui/icons-material/Savings';
 const Form = ({ data,handleOnStaking,handleOnUnStaking }) => {
     const [values, setValues] = React.useState(0);
     const handleChange = (event) => {
-        setValues(event.target.value);
+        setValues(event.target.value.replace(/^0+/, ''));
     };
 
     return (
         <>
             <Paper elevation={2} sx={{ margin: 2, padding: 3, textAlign: 'center' }}>
                 <Grid container justifyContent='center'>
-                    <Grid item>
-                        <FormControl fullWidth sx={{ m: 1 }} variant="filled">
+                    <Grid item sx={{width: {sm:'100%',md:'50%'}}}>
+                        <FormControl fullWidth sx={{ m: 1,fontFamily: 'monospace' }} variant="filled">
                             <TextField
                                 id="outlined-number"
                                 label="Staking Tokens"
                                 type="number"
                                 onChange={handleChange}
                                 value={values}
+                                placeholder="Enter tokens to Deposit"
+                                inputProps={{style:{fontFamily: 'monospace',fontWeight:700}}}
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
