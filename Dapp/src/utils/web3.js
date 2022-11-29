@@ -64,14 +64,12 @@ export const getBalance = async () => {
         const testCoin = new web3.eth.Contract(TestCoin.abi, testCoinData.address)
         let testCoinBalance = await testCoin.methods.balanceOf(account[0]).call();
         return web3.utils.fromWei(testCoinBalance.toString(), 'ether');
-
     }
 }
 
 export const issueFreeToken = async () => {
     const web3 = window.web3;
     const account = await web3.eth.getAccounts();
-    console.log("🚀 ~ file: web3.js ~ line 61 ~ issueFreeTokens ~ account", account);
     const networkId = await web3.eth.net.getId();
     let accountData = { address: account[0] };
     const testCoinData = TestCoin.networks[networkId];
@@ -84,5 +82,39 @@ export const issueFreeToken = async () => {
 
     } else {
         window.alert("ERROR!, Testcoin is not deployed");
+    }
+}
+
+export const transferTokens = async (to, amount) => {
+    const web3 = window.web3;
+    const account = await web3.eth.getAccounts();
+    const networkId = await web3.eth.net.getId();
+    const testCoinData = TestCoin.networks[networkId];
+    if (testCoinData) {
+        const testCoin = new web3.eth.Contract(TestCoin.abi, testCoinData.address)
+        let testCoinBalance = await testCoin.methods.balanceOf(account[0]).call();
+        console.log("🚀 ~ file: web3.js ~ line 96 ~ transferTokens ~ testCoinBalance", testCoinBalance);
+        if (testCoinBalance >= amount) {
+            await testCoin.methods.transfer(to, amount).send({ from: account[0] }).on('transactionHash', (hash) => {
+            })
+
+        } else {
+            alert("ERROR!, Insufficent Tokens");
+        }
+    }
+}
+
+export const getAllEnvents = async () => {
+    const web3 = window.web3;
+    const account = await web3.eth.getAccounts();
+    const networkId = await web3.eth.net.getId();
+    const testCoinData = TestCoin.networks[networkId];
+    if(testCoinData) {
+        const testCoin = new web3.eth.Contract(TestCoin.abi, testCoinData.address)
+       const events = await testCoin.events.allEvents()
+    //    const events = await testCoin.events.allEvents({fromBlock: creationBlock, toBlock: 'latest'})
+        console.log("🚀 ~ file: web3.js ~ line 115 ~ getAllEnvents ~ events", events);
+        return events;
+        
     }
 }

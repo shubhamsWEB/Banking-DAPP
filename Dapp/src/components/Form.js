@@ -1,8 +1,8 @@
 import React from 'react'
 import { Paper, Grid, Button, InputAdornment, FilledInput, InputLabel, FormControl, TextField } from '@mui/material';
 import SavingsIcon from '@mui/icons-material/Savings';
-const Form = ({ data,handleOnStaking,handleOnUnStaking }) => {
-    const [values, setValues] = React.useState(0);
+const Form = ({ data,handleOnStaking,handleOnUnStaking,values, setValues }) => {
+    // const [values, setValues] = React.useState(0);
     const handleChange = (event) => {
         setValues(event.target.value.replace(/^0+/, ''));
     };
@@ -28,12 +28,12 @@ const Form = ({ data,handleOnStaking,handleOnUnStaking }) => {
                         </FormControl>
                     </Grid>
                     <Grid item xs={12} sx={{ mt: 2 }}>
-                        <Button variant="contained" endIcon={<SavingsIcon />} onClick={async() => await handleOnStaking(values)} disabled={values<=0}>
+                        <Button variant="contained" endIcon={<SavingsIcon />} onClick={async() => await handleOnStaking(values)} disabled={values<=0} color="success">
                             Deposit Tokens
                         </Button>
                     </Grid>
                     <Grid item xs={12} sx={{ mt: 2 }}>
-                        <Button variant="contained" endIcon={<SavingsIcon />} color='secondary' disabled={data.stakingBalance === '0'} onClick={async() => await handleOnUnStaking()}>
+                        <Button variant="contained" endIcon={<SavingsIcon />} color='error' disabled={data.stakingBalance === '0'} onClick={async() => await handleOnUnStaking()}>
                             Unstake Tokens
                         </Button>
                     </Grid>

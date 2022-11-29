@@ -9,7 +9,7 @@ const Main = ({ data }) => {
     return (
         <>
             <Paper elevation={2} sx={{ margin: 2, padding: 3, textAlign: 'center' }}>
-                <Typography variant='h5'>Account Summery</Typography>
+                <Typography variant='h4' sx={{fontFamily: 'monospace',fontWeight:'bolder'}}>Account Summery</Typography>
                 <Grid container>
                     <Grid item xs={12}>
                         <Typography variant='subtitle1'>Available Token</Typography>
