@@ -9,6 +9,7 @@
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.15",
     "@mui/styled-engine-sc": "^5.10.14",
+    "@truffle/hdwallet-provider": "^2.1.2",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.3.1",
     "@types/react": "^17.0.14",
