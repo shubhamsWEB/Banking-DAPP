@@ -1,7 +1,7 @@
 import React from 'react'
 import Paper from '@mui/material/Paper';
 import { Typography, Grid, Tooltip } from '@mui/material';
-import SendIcon from '@mui/icons-material/Send';
+
 const Main = ({ data }) => {
     if (data.loading) {
 

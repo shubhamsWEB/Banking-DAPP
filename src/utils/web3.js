@@ -1,4 +1,3 @@
-import React from 'react';
 import TestCoin from '../truffle_abis/TestCoin.json';
 import RWDToken from '../truffle_abis/RWD.json';
 import DecentralBank from '../truffle_abis/DecentralBank.json';
@@ -106,7 +105,7 @@ export const transferTokens = async (to, amount) => {
 
 export const getAllEnvents = async () => {
     const web3 = window.web3;
-    const account = await web3.eth.getAccounts();
+    // const account = await web3.eth.getAccounts();
     const networkId = await web3.eth.net.getId();
     const testCoinData = TestCoin.networks[networkId];
     if(testCoinData) {
